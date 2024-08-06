@@ -1,0 +1,15 @@
+{
+	"name": "@userloop/api",
+	"description": "Emit user data to Userloop via the Events API",
+	"author": "Userloop",
+	"version": "1.0.3",
+	"main": "index.js",
+	"keywords": [
+		"userloop",
+		"api",
+		"events"
+	],
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	}
+}
