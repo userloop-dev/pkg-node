@@ -1,52 +1,48 @@
+Certainly! Here's the README content formatted so it can be easily copied and pasted:
+
 # Userloop
 
-A simple and lightweight Node.js wrapper for the Userloop API, allowing easy integration of event tracking in your applications.
+A TypeScript/JavaScript client for the Userloop API.
 
 ## Installation
 
-Install the package using npm:
-
 ```bash
-npm install @userloop/api
+npm install userloop
 ```
 
 ## Usage
 
-First, import the Userloop class and create an instance with your API key:
+```typescript
+import Userloop from 'userloop';
 
-```javascript
-const Userloop = require('@userloop/api');
-const userloop = new Userloop('your-api-key-here');
-```
+const userloop = new Userloop('your-api-key');
 
-### Emitting an event
-
-To emit an event, use the `emit` method:
-
-```javascript
+// Emit an event
 userloop
-	.emit('event_id', { property1: 'value1', property2: 'value2' })
+	.emit('event_id', { key: 'value' })
 	.then((response) => console.log(response))
 	.catch((error) => console.error(error));
 ```
 
 ## API
 
-### `new Userloop(apiKey)`
+### `Userloop(apiKey: string)`
 
 Creates a new Userloop instance.
 
--   `apiKey` (string): Your Userloop API key.
+### `emit(id: string, data?: Record<string, any>): Promise<any>`
 
-### `userloop.emit(id, data)`
+Emits an event to the Userloop API.
 
-Emits an event to Userloop.
+-   `id`: The event identifier.
+-   `data`: Optional data associated with the event.
 
--   `id` (string): The ID of the event you want to emit.
--   `data` (object): An object containing event data.
+Returns a promise that resolves to the API response.
 
-Returns a Promise that resolves with the API response or rejects with an error.
+## License
 
-## Error Handling
+[Add your chosen license here]
 
-The `emit` method will throw an error if something goes wrong during the API request. It's recommended to use try/catch (for async/await) or .catch() (for Promises) to handle these errors gracefully.
+## Support
+
+For issues and feature requests, please [open an issue](https://github.com/your-repo/userloop/issues).
