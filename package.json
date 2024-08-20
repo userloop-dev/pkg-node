@@ -2,8 +2,9 @@
 	"name": "@userloop/api",
 	"description": "Emit user data to Userloop via the Events API",
 	"author": "Userloop",
-	"version": "1.0.3",
+	"version": "1.0.7",
 	"main": "index.js",
+	"types": "index.d.ts",
 	"keywords": [
 		"userloop",
 		"api",
@@ -11,5 +12,10 @@
 	],
 	"dependencies": {
 		"node-fetch": "^2.6.1"
+	},
+	"scripts": {
+		"deploy:patch": "npm version patch && npm publish",
+		"deploy:minor": "npm version minor && npm publish",
+		"deploy:major": "npm version major && npm publish"
 	}
 }
