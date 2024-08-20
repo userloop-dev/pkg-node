@@ -2,7 +2,7 @@
 	"name": "@userloop/api",
 	"description": "Emit user data to Userloop via the Events API",
 	"author": "Userloop",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"main": "index.js",
 	"types": "index.d.ts",
 	"keywords": [
