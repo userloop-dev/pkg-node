@@ -1,14 +1,17 @@
-const fetch = typeof window !== 'undefined' && window.fetch ? window.fetch.bind(window) : require('node-fetch');
+const fetch = require('node-fetch');
 
 class Userloop {
 	constructor(apiKey) {
 		this.apiKey = apiKey;
-		this.baseUrl = 'https://events.userloop.dev/emit';
 	}
 
 	async emit(id, data = {}) {
+		if (!id || typeof id !== 'string') {
+			throw new Error('Event ID must be a non-empty string');
+		}
+
 		try {
-			const response = await fetch(this.baseUrl, {
+			const response = await fetch('https://events.userloop.dev/emit', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
